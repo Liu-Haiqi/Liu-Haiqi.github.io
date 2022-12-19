@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="GB2312"?>
+<sis-eletra>
+    <oes_sec>
+      <element name="soft">on-sm2-sm3</element>		<!-->软章：on为使用软章，off为不使用软章<-->
+      <element name="pin"></element>	<!-->key的pin码：填写pin码表示盖章和验章时不用输pin码，不填写表示盖章和验章操作时需另输pin码<-->
+    	<element name="BMVersion">off</element>
+    </oes_sec>
+    <libname>	<!-->Key的驱动库名字<-->
+      <element name="linux">/storage/emulated/0/Android/data/com.android.UniPlugin/apps/__UNI__4001CA1/www/static/lib/libsis_skf_jni.so</element>		<!-->linux下Key驱动库<-->
+      <element name="windows">mtoken_gm3000.dll</element>				<!-->windows下Key驱动库<-->
+      <element name="container"></element> 		<!-->KEY容器名<-->
+      <element name="certificate"></element> 		<!-->KEY中证书名<-->
+      <element name="label">off</element> 		<!-->单KEY是否验证标签<-->
+    </libname>
+    <webservice>
+    	<element name="GetSealList">offline</element> <!-->获取印章列表: online:在线获取（需要配置在线地址），offline:从KEY中获取<-->
+    	<element name="GetSealData">offline</element> <!-->获取印章数据：online:在线获取（需要配置在线地址），offline:从KEY中获取<-->
+      <element name="publish">offline</element><!-->验章模式：online:服务端验证（需要配置发布地址），offline:使用KEY验证<-->
+      <element name="online_server">http://127.0.0.1:8080/SIS_ZX/webservice/IEsmsService</element> <!-->在线地址<-->
+      <element name="publish_server">http://127.0.0.1:8080/SIS_FB/webservice/IEsmsService</element><!-->发布地址<-->
+      <element name="targetSystemID">targetSystemID</element> <!--><--> 
+      <element name="time_server">GMT</element> <!-->GMT：格林威治时间, local:本地时间<--> 
+      <element name="timeout">30</element> <!-->验章操作超时时间<--> 
+      <element name="OnlineChangeOffline">off</element> <!-->验章操作超时切换功能：off为不自动切换；on在线切换为离线（在客户端与服务端网络断开后验章时才生效）<--> 
+      <element name="sign">7800E0FF0E50623AB680F6BC946D0217</element>
+      <element name="protocolEncrypt">off</element> <!-->与服务端的交互协议加密：on为加密，off为不加密,（只有在线时才用此功能）<-->
+      <element name="onlineVerifySignValue">off</element> <!-->服务端提供验证签章数据协议：on为提供，off为不提供,（只有在线时才用此功能）<-->
+      <element name="verify">on</element> <!-->验证与服务端的交互协议：on为验证，off为不验证,（只有在线时才用此功能）<-->
+    </webservice>
+    <oes_verify>
+	<element name="certVouch">off</element>	<!-->在线获取证书验证凭证：on为获取，off为不获取<-->
+	<element name="sealVouch">on</element>	<!-->在线获取印章验证凭证：on为获取，off为不获取<-->
+	<element name="esealRevokeList">off</element>	<!-->印章撤销列表：on为验证（把crl格式的文件放到签章客户端配置文件同路径下的esCrl文件夹中），off为不验证<-->
+	<element name="certChain_certRevokeList">off</element>	<!-->验证根证书、证书撤销列表：on为验证（把根证书和证书撤销列表放到签章客户端配置文件同路径下的cer文件夹中），off为不验证<-->
+    </oes_verify>
+    <oes_authorize>
+    	<element name="appid">1</element> <!-->appid: 授权系统分配 <-->
+    	<element name="online">off</element><!-->授权模式： on为在线 off为离线 <-->
+    	<element name="url">http://127.0.0.1:8081/clientServer/authorization/clientAuthorizationOnline</element>
+    </oes_authorize>
+    <oes_soft>
+   		<element name="VerifyAuthorize">on</element>	<!-->on 软章弹授权窗 off不弹 <-->
+    </oes_soft>
+    <OES_Logout>
+   		<element name="function">off</element><!-->on开放登出功能 off关闭登出功能 <-->
+    </OES_Logout>
+</sis-eletra>
