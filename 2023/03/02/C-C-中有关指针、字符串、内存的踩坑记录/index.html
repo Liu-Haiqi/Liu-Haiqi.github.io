@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="C,C++,bug解决,指针," />
 
 
 
@@ -79,16 +79,23 @@
 
 
 
-<meta name="description" content="一个在github上搭建的hexo博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="LHQ&#39; s blog">
-<meta property="og:url" content="https://liu-haiqi.github.io/tags/linux/index.html">
+<meta name="description" content="工作中使用java调用C++的dll库导致java程序崩溃，但是在vs2010中调试没有发现错误，百度搜到的大部分的致错原因是释放了已释放的内存。 后来师傅检查代码，发现如下使用方法： 123456789void *p &#x3D; NULL;p; &#x2F;&#x2F; 对p赋值unsigned char* pData &#x3D; (unsigned char*)p;pData; &#x2F;&#x2F; 使用pDatafree(pData);..">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C&#x2F;C++中有关指针、字符串、内存的踩坑记录">
+<meta property="og:url" content="https://liu-haiqi.github.io/2023/03/02/C-C-%E4%B8%AD%E6%9C%89%E5%85%B3%E6%8C%87%E9%92%88%E3%80%81%E5%AD%97%E7%AC%A6%E4%B8%B2%E3%80%81%E5%86%85%E5%AD%98%E7%9A%84%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/index.html">
 <meta property="og:site_name" content="LHQ&#39; s blog">
-<meta property="og:description" content="一个在github上搭建的hexo博客">
+<meta property="og:description" content="工作中使用java调用C++的dll库导致java程序崩溃，但是在vs2010中调试没有发现错误，百度搜到的大部分的致错原因是释放了已释放的内存。 后来师傅检查代码，发现如下使用方法： 123456789void *p &#x3D; NULL;p; &#x2F;&#x2F; 对p赋值unsigned char* pData &#x3D; (unsigned char*)p;pData; &#x2F;&#x2F; 使用pDatafree(pData);..">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://liu-haiqi.github.io/images/image-20230302-1.png">
+<meta property="article:published_time" content="2023-03-02T07:19:44.000Z">
+<meta property="article:modified_time" content="2023-03-02T07:40:34.914Z">
 <meta property="article:author" content="LHQ">
-<meta property="article:tag" content="个人学习记录">
+<meta property="article:tag" content="C">
+<meta property="article:tag" content="C++">
+<meta property="article:tag" content="bug解决">
+<meta property="article:tag" content="指针">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://liu-haiqi.github.io/images/image-20230302-1.png">
 
 
 
@@ -118,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="https://liu-haiqi.github.io/tags/linux/"/>
+  <link rel="canonical" href="https://liu-haiqi.github.io/2023/03/02/C-C-中有关指针、字符串、内存的踩坑记录/"/>
 
 
 
 
 
-  <title>Tag: linux | LHQ' s blog</title>
+  <title>C/C++中有关指针、字符串、内存的踩坑记录 | LHQ' s blog</title>
   
 
 
@@ -143,7 +150,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -237,82 +244,176 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>linux<small>Tag</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://liu-haiqi.github.io/2023/03/02/C-C-%E4%B8%AD%E6%9C%89%E5%85%B3%E6%8C%87%E9%92%88%E3%80%81%E5%AD%97%E7%AC%A6%E4%B8%B2%E3%80%81%E5%86%85%E5%AD%98%E7%9A%84%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="LHQ' s blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2022/12/11/adb-shell%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/" itemprop="url">
-              
-                <span itemprop="name">adb shell使用记录</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">C/C++中有关指针、字符串、内存的踩坑记录</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2022-12-11T17:13:53+08:00"
-              content="2022-12-11" >
-          12-11
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2023-03-02T15:19:44+08:00">
+                2023-03-02
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-        
+      
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+      
+        <p><img src="/../images/image-20230302-1.png" alt="image-20230302152334968"></p>
+<p>工作中使用java调用C++的dll库导致java程序崩溃，但是在vs2010中调试没有发现错误，百度搜到的大部分的致错原因是<strong>释放了已释放的内存</strong>。</p>
+<p>后来师傅检查代码，发现如下使用方法：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> *p = <span class="literal">NULL</span>;</span><br><span class="line">p; <span class="comment">// 对p赋值</span></span><br><span class="line"></span><br><span class="line"><span class="type">unsigned</span> <span class="type">char</span>* pData = (<span class="type">unsigned</span> <span class="type">char</span>*)p;</span><br><span class="line">pData; <span class="comment">// 使用pData</span></span><br><span class="line"><span class="built_in">free</span>(pData);</span><br><span class="line">...</span><br><span class="line"></span><br><span class="line"><span class="built_in">free</span>(p);</span><br></pre></td></tr></table></figure>
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2022/12/11/linux%E6%9F%A5%E7%9C%8B%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9%E6%80%BB%E7%BB%93/" itemprop="url">
-              
-                <span itemprop="name">linux查看文件内容总结</span>
-              
-            </a>
-        
-      </h2>
+<p>这种用法乍一看可能没有什么问题，但是第三行申请并初始化指针pData和p指向同一块内存区域，当free(pData)时，p所指向的内存区域已经被释放，后续再次free(p)时就会导致程序崩溃。</p>
+<p>p.s.</p>
+<p>在C&#x2F;C++使用过程中要时刻注意：赋值和指针的区别。当使用指针时，注意两个指针变量指向同一片内存区域，当修改其中一个指针指向内存区域的值时，另一个指针指向的内存区域的内容也会随之改变。</p>
+<p>C语言使用字符数组时：</p>
+<p>1、注意初始化：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">char</span> buf[<span class="number">128</span>] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line"><span class="type">int</span> buflen = <span class="keyword">sizeof</span>(buf);</span><br></pre></td></tr></table></figure>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2022-12-11T14:58:49+08:00"
-              content="2022-12-11" >
-          12-11
-        </time>
-      </div>
+<p>将字符数组初始化为空</p>
+<p>2、注意指针</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">char</span> buf[<span class="number">128</span>] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line"><span class="type">int</span> buflen = <span class="keyword">sizeof</span>(buf);</span><br><span class="line"></span><br><span class="line"><span class="type">char</span> *tmp = buf;</span><br></pre></td></tr></table></figure>
 
-    </header>
-  </article>
-
+<p>tmp为字符指针，与buf指向同一片内存区域，tmp与buf同时改变。</p>
+<p>3、注意字符串结尾的’\0’</p>
+<p>如果字符串结尾没有’\0’，对字符串进行拷贝、比较等操作时会导致访问错误。</p>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/C/" rel="tag"># C</a>
+          
+            <a href="/tags/C/" rel="tag"># C++</a>
+          
+            <a href="/tags/bug%E8%A7%A3%E5%86%B3/" rel="tag"># bug解决</a>
+          
+            <a href="/tags/%E6%8C%87%E9%92%88/" rel="tag"># 指针</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2023/02/21/mongoose%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/" rel="next" title="mongoose库的使用">
+                <i class="fa fa-chevron-left"></i> mongoose库的使用
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -320,6 +421,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -559,6 +664,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
